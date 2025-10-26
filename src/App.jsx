@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import React from 'react';
+import TechBackground from './components/TechBackground';
+import RobotShowcase from './components/RobotShowcase';
+import LoginCard from './components/LoginCard';
+import HeaderBrand from './components/HeaderBrand';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+    <div className="relative min-h-screen overflow-hidden">
+      <TechBackground />
+
+      {/* Content */}
+      <div className="relative z-10">
+        <HeaderBrand />
+        <main className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-4 px-4 pb-10 pt-2 md:px-8 lg:grid-cols-2 lg:gap-8">
+          {/* Left: Robot + Title + Effects */}
+          <RobotShowcase />
+
+          {/* Right: Login Card */}
+          <LoginCard />
+        </main>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
